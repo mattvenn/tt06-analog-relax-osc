@@ -9,9 +9,13 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-todo
+
+In electronics a [relaxation oscillator](https://en.wikipedia.org/wiki/Relaxation_oscillator) is a nonlinear electronic oscillator circuit that produces a nonsinusoidal repetitive output signal, such as a triangle wave or square wave.
+
+The R&C have been chosen to make a ~2MHz signal.
+An inverter after the oscillator makes a full swing square wave.
 
 ## How to test
 
-todo
+Measure the oscillator out on pin 0 (tbc, might cause issues due to the analog mux parasitics). Measure the square wave out on pin 1.
 

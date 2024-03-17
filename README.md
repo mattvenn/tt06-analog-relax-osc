@@ -2,6 +2,7 @@
 
 # Tiny Tapeout - Relaxation Oscillator
 
+- [Open the schematic in your browser](https://xschem-viewer.com/?file=https://github.com/mattvenn/tt06-analog-relax-osc/blob/main/xschem/osc.sch)
 - [Read the documentation for project](docs/info.md)
 
 ![layout](docs/layout.png)
