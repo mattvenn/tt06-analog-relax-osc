@@ -191,7 +191,7 @@ L=18
 model=res_high_po_0p35
 spiceprefix=X
 mult=1}
-C {sky130_fd_pr/cap_mim_m3_1.sym} -50 100 1 0 {name=C1 model=cap_mim_m3_1 W=50 L=100 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} -50 100 1 0 {name=C1 model=cap_mim_m3_1 W=30 L=30 MF=5 spiceprefix=X}
 C {devices/gnd.sym} -350 290 0 0 {name=l1 lab=GND}
 C {devices/vdd.sym} -30 -160 0 0 {name=l2 lab=VDD}
 C {devices/code.sym} -240 610 0 0 {name=TT_MODELS
@@ -214,7 +214,7 @@ vb b 0 0
 .control
 tran 500p 5u uic
 write testbench.raw
-quit 0
+*quit 0
 .endc
 .end
 "}
@@ -281,7 +281,7 @@ C {devices/lab_pin.sym} -440 230 0 1 {name=p22 sig_type=std_logic lab=cset
 }
 C {devices/lab_pin.sym} 270 270 0 1 {name=p23 sig_type=std_logic lab=cset
 }
-C {sky130_fd_pr/cap_mim_m3_1.sym} -50 250 3 1 {name=C2 model=cap_mim_m3_1 W=50 L=100 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} -50 250 3 1 {name=C2 model=cap_mim_m3_1 W=30 L=30 MF=5 spiceprefix=X}
 C {devices/ipin.sym} -140 480 0 0 {name=p1 lab=VDD}
 C {devices/iopin.sym} 120 510 0 0 {name=p3 lab=osc_out}
 C {devices/ipin.sym} -140 510 0 0 {name=p4 lab=GND}
