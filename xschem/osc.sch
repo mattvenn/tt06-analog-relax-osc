@@ -6,8 +6,8 @@ V {}
 S {}
 E {}
 B 2 490 -140 1290 260 {flags=graph
-y1=-0.116442
-y2=2.09156
+y1=0.325158
+y2=2.53316
 ypos1=0
 ypos2=2
 divy=5
@@ -86,8 +86,6 @@ N -310 40 -180 40 {
 lab=osc_b}
 N -180 40 10 -100 {
 lab=osc_b}
-N -340 100 -80 100 {
-lab=nfet_drain}
 N -350 70 -350 100 {
 lab=nfet_drain}
 N -350 100 -340 100 {
@@ -122,6 +120,16 @@ N 180 190 180 240 {
 lab=rnfet_drain}
 N 100 510 120 510 {
 lab=osc_out}
+N -90 100 -80 100 {
+lab=nfet_drain}
+N -340 100 -150 100 {
+lab=nfet_drain}
+N -20 100 -20 250 {
+lab=rnfet_drain}
+N -80 100 -80 250 {
+lab=nfet_drain}
+N -150 100 -90 100 {
+lab=nfet_drain}
 C {sky130_fd_pr/nfet_01v8.sym} -330 40 0 1 {name=M1
 L=2
 W=20
@@ -188,7 +196,7 @@ L=18
 model=res_high_po_0p35
 spiceprefix=X
 mult=1}
-C {sky130_fd_pr/cap_mim_m3_1.sym} -50 100 1 0 {name=C1 model=cap_mim_m3_1 W=50 L=200 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} -50 100 1 0 {name=C1 model=cap_mim_m3_1 W=50 L=100 MF=1 spiceprefix=X}
 C {devices/gnd.sym} -350 290 0 0 {name=l1 lab=GND}
 C {devices/vdd.sym} -30 -160 0 0 {name=l2 lab=VDD}
 C {devices/code.sym} -370 440 0 0 {name=TT_MODELS
@@ -235,7 +243,7 @@ C {devices/lab_pin.sym} 10 -70 0 1 {name=p10 sig_type=std_logic lab=osc_b}
 C {sky130_fd_pr/nfet_01v8.sym} -480 260 0 1 {name=M5
 L=2
 W=20
-nf=5
+nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
@@ -249,7 +257,7 @@ spiceprefix=X
 C {sky130_fd_pr/nfet_01v8.sym} -370 260 0 0 {name=M6
 L=2
 W=20
-nf=5
+nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
@@ -270,7 +278,7 @@ C {devices/gnd.sym} 180 300 0 0 {name=l6 lab=GND}
 C {sky130_fd_pr/nfet_01v8.sym} 200 270 0 1 {name=M8
 L=2
 W=20
-nf=5
+nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
@@ -294,3 +302,4 @@ C {devices/lab_pin.sym} -440 230 0 1 {name=p22 sig_type=std_logic lab=cset
 }
 C {devices/lab_pin.sym} 270 270 0 1 {name=p23 sig_type=std_logic lab=cset
 }
+C {sky130_fd_pr/cap_mim_m3_1.sym} -50 250 3 1 {name=C2 model=cap_mim_m3_1 W=50 L=100 MF=1 spiceprefix=X}
