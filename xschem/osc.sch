@@ -6,8 +6,8 @@ V {}
 S {}
 E {}
 B 2 490 -140 1290 260 {flags=graph
-y1=0.325158
-y2=2.53316
+y1=0.053
+y2=1.9
 ypos1=0
 ypos2=2
 divy=5
@@ -30,8 +30,8 @@ node="osc_a
 osc_b
 nfet_drain"}
 B 2 480 400 1280 800 {flags=graph
-y1=-0.00025
-y2=1.8
+y1=-0.0042
+y2=1.9
 ypos1=0
 ypos2=2
 divy=5
@@ -49,9 +49,8 @@ dataset=-1
 unitx=1
 logx=0
 logy=0
-color="6 9"
-node="inv_out
-osc_out"}
+color=6
+node=osc_out}
 N 180 -100 180 20 {
 lab=osc_b}
 N -350 -90 -350 10 {
@@ -91,13 +90,13 @@ lab=nfet_drain}
 N -350 100 -340 100 {
 lab=nfet_drain}
 N -20 100 180 100 {
-lab=rnfet_drain}
+lab=#net1}
 N 180 80 180 100 {
-lab=rnfet_drain}
+lab=#net1}
 N -430 40 -350 40 {
-lab=b}
+lab=nfet_drain}
 N 180 50 280 50 {
-lab=b}
+lab=#net1}
 N -80 -100 -80 -70 {
 lab=osc_a}
 N 10 -100 10 -70 {
@@ -113,11 +112,11 @@ lab=GND}
 N -350 100 -350 230 {
 lab=nfet_drain}
 N 180 100 180 190 {
-lab=rnfet_drain}
+lab=#net1}
 N 220 270 270 270 {
 lab=cset}
 N 180 190 180 240 {
-lab=rnfet_drain}
+lab=#net1}
 N 100 510 120 510 {
 lab=osc_out}
 N -90 100 -80 100 {
@@ -125,11 +124,59 @@ lab=nfet_drain}
 N -340 100 -150 100 {
 lab=nfet_drain}
 N -20 100 -20 250 {
-lab=rnfet_drain}
+lab=#net1}
 N -80 100 -80 250 {
 lab=nfet_drain}
 N -150 100 -90 100 {
 lab=nfet_drain}
+N -520 260 -500 260 {
+lab=GND}
+N -590 260 -520 260 {
+lab=GND}
+N -590 260 -590 290 {
+lab=GND}
+N -590 290 -500 290 {
+lab=GND}
+N -350 260 -260 260 {
+lab=GND}
+N -260 260 -260 290 {
+lab=GND}
+N -350 290 -260 290 {
+lab=GND}
+N -430 40 -430 90 {
+lab=nfet_drain}
+N -430 90 -350 90 {
+lab=nfet_drain}
+N 180 80 280 80 {
+lab=#net1}
+N 280 50 280 80 {
+lab=#net1}
+N 100 270 180 270 {
+lab=GND}
+N 100 270 100 300 {
+lab=GND}
+N 100 300 180 300 {
+lab=GND}
+N 140 -130 160 -130 {
+lab=GND}
+N 120 -130 140 -130 {
+lab=GND}
+N 50 -130 100 -130 {
+lab=VDD}
+N 100 -160 100 -130 {
+lab=VDD}
+N -230 -130 -150 -130 {
+lab=VDD}
+N -230 -160 -230 -130 {
+lab=VDD}
+N -400 -130 -370 -130 {
+lab=GND}
+N -590 200 -520 200 {
+lab=GND}
+N -590 200 -590 260 {
+lab=GND}
+N 120 480 120 510 {
+lab=osc_out}
 C {sky130_fd_pr/nfet_01v8.sym} -330 40 0 1 {name=M1
 L=2
 W=20
@@ -199,7 +246,7 @@ mult=1}
 C {sky130_fd_pr/cap_mim_m3_1.sym} -50 100 1 0 {name=C1 model=cap_mim_m3_1 W=50 L=100 MF=1 spiceprefix=X}
 C {devices/gnd.sym} -350 290 0 0 {name=l1 lab=GND}
 C {devices/vdd.sym} -30 -160 0 0 {name=l2 lab=VDD}
-C {devices/code.sym} -370 440 0 0 {name=TT_MODELS
+C {devices/code.sym} -620 410 0 0 {name=TT_MODELS
 only_toplevel=true
 format="tcleval( @value )"
 value="
@@ -210,11 +257,10 @@ value="
 
 "
 spice_ignore=false}
-C {devices/code.sym} -370 640 0 0 {name=SIMULATION
+C {devices/code.sym} -620 610 0 0 {name=SIMULATION
 only_toplevel=false 
 value="
-vs s 1.8 0
-vb b 0 0
+
 
 .control
 tran 500p 5u uic
@@ -223,17 +269,7 @@ quit 0
 .endc
 .end
 "}
-C {devices/vsource.sym} 20 670 0 0 {name=V1 value=1.8 savecurrent=false}
-C {devices/vdd.sym} 20 640 0 0 {name=l3 lab=VDD}
-C {devices/gnd.sym} 20 700 0 0 {name=l4 lab=GND}
-C {devices/lab_pin.sym} -370 -130 0 0 {name=p1 sig_type=std_logic lab=b}
-C {devices/lab_pin.sym} -430 40 0 0 {name=p3 sig_type=std_logic lab=b}
-C {devices/lab_pin.sym} 280 50 2 0 {name=p4 sig_type=std_logic lab=b}
-C {devices/lab_pin.sym} 160 -130 0 0 {name=p5 sig_type=std_logic lab=b}
-C {devices/lab_pin.sym} -150 -130 0 0 {name=p2 sig_type=std_logic lab=s}
-C {devices/lab_pin.sym} 50 -130 2 0 {name=p6 sig_type=std_logic lab=s}
-C {devices/ipin.sym} 140 640 0 0 {name=p7 lab=b}
-C {devices/ipin.sym} 140 670 0 0 {name=p8 lab=s}
+C {devices/vdd.sym} -140 480 0 0 {name=l3 lab=VDD}
 C {devices/launcher.sym} 530 320 0 0 {name=h5
 descr="load waves" 
 tclcommand="xschem raw_read $netlist_dir/testbench.raw tran"
@@ -289,17 +325,20 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {devices/lab_pin.sym} -520 200 0 0 {name=p11 sig_type=std_logic lab=b}
-C {devices/lab_pin.sym} -500 260 0 0 {name=p12 sig_type=std_logic lab=b}
-C {devices/lab_pin.sym} 180 270 0 0 {name=p13 sig_type=std_logic lab=b}
-C {devices/lab_pin.sym} -350 260 0 1 {name=p15 sig_type=std_logic lab=b}
 C {sky130_stdcells/clkinv_8.sym} 60 510 0 0 {name=x1 VGND=GND VNB=VGND VPB=VDD VPWR=VDD prefix=sky130_fd_sc_hd__ }
 C {devices/lab_pin.sym} 20 510 0 0 {name=p17 sig_type=std_logic lab=osc_a}
-C {devices/lab_pin.sym} 120 510 0 1 {name=p18 sig_type=std_logic lab=osc_out}
 C {devices/lab_pin.sym} -350 100 0 0 {name=p20 sig_type=std_logic lab=nfet_drain}
-C {devices/lab_pin.sym} 180 100 2 0 {name=p21 sig_type=std_logic lab=rnfet_drain}
 C {devices/lab_pin.sym} -440 230 0 1 {name=p22 sig_type=std_logic lab=cset
 }
 C {devices/lab_pin.sym} 270 270 0 1 {name=p23 sig_type=std_logic lab=cset
 }
 C {sky130_fd_pr/cap_mim_m3_1.sym} -50 250 3 1 {name=C2 model=cap_mim_m3_1 W=50 L=100 MF=1 spiceprefix=X}
+C {devices/gnd.sym} -400 -130 0 0 {name=l7 lab=GND}
+C {devices/gnd.sym} 120 -130 0 0 {name=l8 lab=GND}
+C {devices/ipin.sym} -140 480 0 0 {name=p1 lab=VDD}
+C {devices/iopin.sym} 120 480 0 0 {name=p3 lab=osc_out}
+C {devices/ipin.sym} -140 510 0 0 {name=p4 lab=GND}
+C {devices/vsource.sym} -280 500 0 0 {name=V1 value=1.8 savecurrent=false}
+C {devices/gnd.sym} -280 530 0 0 {name=l9 lab=GND}
+C {devices/gnd.sym} -140 510 0 0 {name=l10 lab=GND}
+C {devices/vdd.sym} -280 470 0 0 {name=l11 lab=VDD}
