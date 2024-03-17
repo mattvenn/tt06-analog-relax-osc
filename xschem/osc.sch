@@ -30,8 +30,8 @@ node="osc_a
 osc_b
 nfet_drain"}
 B 2 480 400 1280 800 {flags=graph
-y1=0.0019
-y2=1.9
+y1=-0.00025
+y2=1.8
 ypos1=0
 ypos2=2
 divy=5
@@ -286,7 +286,7 @@ C {devices/lab_pin.sym} -500 260 0 0 {name=p12 sig_type=std_logic lab=b}
 C {devices/lab_pin.sym} 180 270 0 0 {name=p13 sig_type=std_logic lab=b}
 C {devices/lab_pin.sym} -350 260 0 1 {name=p15 sig_type=std_logic lab=b}
 C {sky130_stdcells/clkinv_8.sym} 60 510 0 0 {name=x1 VGND=GND VNB=VGND VPB=VDD VPWR=VDD prefix=sky130_fd_sc_hd__ }
-C {devices/lab_pin.sym} 20 510 0 0 {name=p17 sig_type=std_logic lab=nfet_drain}
+C {devices/lab_pin.sym} 20 510 0 0 {name=p17 sig_type=std_logic lab=osc_a}
 C {devices/lab_pin.sym} 120 510 0 1 {name=p18 sig_type=std_logic lab=osc_out}
 C {devices/lab_pin.sym} -350 100 0 0 {name=p20 sig_type=std_logic lab=nfet_drain}
 C {devices/lab_pin.sym} 180 100 2 0 {name=p21 sig_type=std_logic lab=rnfet_drain}
