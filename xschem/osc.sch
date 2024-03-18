@@ -249,7 +249,7 @@ spiceprefix=X
 }
 C {sky130_stdcells/clkinv_8.sym} 530 -120 0 0 {name=x1 VGND=VSS VNB=VSS VPB=VDD VPWR=VDD prefix=sky130_fd_sc_hd__ }
 C {devices/lab_pin.sym} 490 -120 0 0 {name=p17 sig_type=std_logic lab=osc_a}
-C {devices/lab_pin.sym} -350 100 0 0 {name=p20 sig_type=std_logic lab=nfet_drain}
+C {devices/lab_pin.sym} -350 100 0 0 {name=p20 sig_type=std_logic lab=left_cap}
 C {devices/lab_pin.sym} -440 230 0 1 {name=p22 sig_type=std_logic lab=cset
 }
 C {devices/lab_pin.sym} 270 270 0 1 {name=p23 sig_type=std_logic lab=cset
