@@ -1,3 +1,9 @@
+# Mon 18 Mar 12:14:53 CET 2024
+
+* moved testbench out to start layout
+* broke without vdd and vgnd why?
+* how to do plots in the sub circuit?
+
 # Sun 17 Mar 13:06:43 CET 2024
 
 * how to get it to oscillate
