@@ -6,8 +6,8 @@ V {}
 S {}
 E {}
 B 2 100 100 900 500 {flags=graph
-y1=0.17
-y2=1.2
+y1=-0.0048
+y2=1.8
 ypos1=0
 ypos2=2
 divy=5
@@ -27,6 +27,10 @@ logx=0
 logy=0
 color=6
 node=osc_out}
+N -30 140 50 140 {
+lab=GND}
+N -30 120 -10 120 {
+lab=VDD}
 C {devices/code.sym} -120 -80 0 0 {name=TT_MODELS
 only_toplevel=true
 format="tcleval( @value )"
@@ -50,18 +54,14 @@ write testbench.raw
 .end
 "}
 C {devices/vsource.sym} -360 -40 0 0 {name=V1 value=1.8 savecurrent=false}
-C {devices/lab_pin.sym} -360 -10 0 1 {name=p12 sig_type=std_logic lab=VSS
-}
-C {devices/lab_pin.sym} -360 -70 0 1 {name=p13 sig_type=std_logic lab=VDD
-}
 C {devices/launcher.sym} 150 20 0 0 {name=h5
 descr="load waves" 
 tclcommand="xschem raw_read $netlist_dir/testbench.raw tran"
 }
 C {osc.sym} -180 140 0 0 {name=x1}
-C {devices/lab_pin.sym} -30 120 0 1 {name=p1 sig_type=std_logic lab=VDD
-}
-C {devices/lab_pin.sym} -30 140 0 1 {name=p2 sig_type=std_logic lab=VSS
-}
 C {devices/lab_pin.sym} -30 160 0 1 {name=p3 sig_type=std_logic lab=osc_out
 }
+C {devices/gnd.sym} -360 -10 0 0 {name=l1 lab=GND}
+C {devices/gnd.sym} 50 140 0 0 {name=l2 lab=GND}
+C {devices/vdd.sym} -360 -70 0 0 {name=l3 lab=VDD}
+C {devices/vdd.sym} -10 120 0 0 {name=l4 lab=VDD}
