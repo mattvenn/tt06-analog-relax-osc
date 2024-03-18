@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1710791491
+timestamp 1710792168
 << locali >>
 rect 22500 9374 23340 9380
 rect 21800 9317 22200 9320
@@ -204,7 +204,7 @@ rect 17728 4110 17729 4230
 rect 16944 4000 17048 4110
 rect 17607 4109 17729 4110
 rect 20226 2812 20330 4336
-use sky130_fd_sc_hd__clkinv_8  x1 $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
+use sky130_fd_sc_hd__clkinv_8  x1 ~/.volare/volare/sky130/versions/78b7bc32ddb4b6f14f76883c2e2dc5b5de9d1cbc/sky130A/libs.ref/sky130_fd_sc_hd/mag
 timestamp 1704896540
 transform 1 0 21478 0 1 9068
 box -38 -48 1234 592
@@ -263,4 +263,9 @@ flabel metal1 4660 5360 4860 5560 0 FreeSans 256 0 0 0 VSS
 port 2 nsew
 flabel metal1 23380 9240 23580 9440 0 FreeSans 256 0 0 0 osc_out
 port 0 nsew
+flabel metal1 12790 6760 12890 8670 0 FreeSans 1600 0 0 0 osc_a
+flabel metal1 13570 6760 13670 9210 0 FreeSans 1600 0 0 0 osc_b
+flabel metal2 8022 4306 8142 10780 0 FreeSans 1600 0 0 0 left_cap
+flabel metal2 18414 4230 18534 10800 0 FreeSans 1600 0 0 0 right_cap
+flabel metal1 4240 11520 6940 11680 0 FreeSans 1600 0 0 0 cset
 << end >>
