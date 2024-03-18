@@ -40,9 +40,9 @@ lab=osc_b}
 N -180 40 10 -100 {
 lab=osc_b}
 N -350 70 -350 100 {
-lab=nfet_drain}
+lab=left_cap}
 N -350 100 -340 100 {
-lab=nfet_drain}
+lab=left_cap}
 N -20 100 180 100 {
 lab=#net1}
 N 180 80 180 100 {
@@ -60,7 +60,7 @@ lab=cset}
 N -500 290 -350 290 {
 lab=VSS}
 N -350 100 -350 230 {
-lab=nfet_drain}
+lab=left_cap}
 N 180 100 180 190 {
 lab=#net1}
 N 220 270 270 270 {
@@ -70,15 +70,15 @@ lab=#net1}
 N 570 -120 590 -120 {
 lab=osc_out}
 N -90 100 -80 100 {
-lab=nfet_drain}
+lab=left_cap}
 N -340 100 -150 100 {
-lab=nfet_drain}
+lab=left_cap}
 N -20 100 -20 250 {
 lab=#net1}
 N -80 100 -80 250 {
-lab=nfet_drain}
+lab=left_cap}
 N -150 100 -90 100 {
-lab=nfet_drain}
+lab=left_cap}
 N -170 -130 -150 -130 {
 lab=VDD}
 N -170 -160 -170 -130 {
@@ -269,3 +269,4 @@ C {devices/lab_pin.sym} -400 40 2 1 {name=p11 sig_type=std_logic lab=VSS
 }
 C {devices/iopin.sym} -580 -150 0 0 {name=p12 lab=VDD}
 C {devices/iopin.sym} -580 -120 0 0 {name=p1 lab=VSS}
+C {devices/lab_pin.sym} 180 100 0 1 {name=p4 sig_type=std_logic lab=left_cap}
