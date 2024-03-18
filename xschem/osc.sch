@@ -5,52 +5,6 @@ K {}
 V {}
 S {}
 E {}
-B 2 490 -140 1290 260 {flags=graph
-y1=0.053
-y2=1.9
-ypos1=0
-ypos2=2
-divy=5
-subdivy=1
-unity=1
-x1=5e-12
-x2=5e-06
-divx=5
-subdivx=1
-xlabmag=1.0
-ylabmag=1.0
-
-
-dataset=-1
-unitx=1
-logx=0
-logy=0
-color="6 4 5"
-node="osc_a
-osc_b
-nfet_drain"}
-B 2 480 400 1280 800 {flags=graph
-y1=-0.0042
-y2=1.9
-ypos1=0
-ypos2=2
-divy=5
-subdivy=1
-unity=1
-x1=5e-12
-x2=5e-06
-divx=5
-subdivx=1
-xlabmag=1.0
-ylabmag=1.0
-
-
-dataset=-1
-unitx=1
-logx=0
-logy=0
-color=6
-node=osc_out}
 N 180 -100 180 20 {
 lab=osc_b}
 N -350 -90 -350 10 {
@@ -104,7 +58,7 @@ lab=cset}
 N -440 230 -440 260 {
 lab=cset}
 N -500 290 -350 290 {
-lab=GND}
+lab=VSS}
 N -350 100 -350 230 {
 lab=nfet_drain}
 N 180 100 180 190 {
@@ -113,7 +67,7 @@ N 220 270 270 270 {
 lab=cset}
 N 180 190 180 240 {
 lab=#net1}
-N 100 510 120 510 {
+N 570 -120 590 -120 {
 lab=osc_out}
 N -90 100 -80 100 {
 lab=nfet_drain}
@@ -125,6 +79,58 @@ N -80 100 -80 250 {
 lab=nfet_drain}
 N -150 100 -90 100 {
 lab=nfet_drain}
+N -170 -130 -150 -130 {
+lab=VDD}
+N -170 -160 -170 -130 {
+lab=VDD}
+N 50 -130 80 -130 {
+lab=VDD}
+N 80 -160 80 -130 {
+lab=VDD}
+N -550 260 -500 260 {
+lab=VSS}
+N -550 260 -550 290 {
+lab=VSS}
+N -550 290 -500 290 {
+lab=VSS}
+N -350 260 -300 260 {
+lab=VSS}
+N -300 260 -300 290 {
+lab=VSS}
+N -350 290 -300 290 {
+lab=VSS}
+N -550 200 -520 200 {
+lab=VSS}
+N -550 200 -550 260 {
+lab=VSS}
+N 150 270 180 270 {
+lab=VSS}
+N 150 270 150 300 {
+lab=VSS}
+N 150 300 180 300 {
+lab=VSS}
+N -400 -130 -370 -130 {
+lab=VSS}
+N -400 -130 -400 40 {
+lab=VSS}
+N -400 40 -350 40 {
+lab=VSS}
+N 180 -160 240 -160 {
+lab=VDD}
+N 180 -100 240 -100 {
+lab=osc_b}
+N 260 -130 260 50 {
+lab=VSS}
+N 180 50 260 50 {
+lab=VSS}
+N -80 -190 -80 -160 {
+lab=VDD}
+N -500 150 -500 170 {
+lab=VDD}
+N -410 290 -410 300 {
+lab=VSS}
+N 180 300 180 310 {
+lab=VSS}
 C {sky130_fd_pr/nfet_01v8.sym} -330 40 0 1 {name=M1
 L=2
 W=20
@@ -186,43 +192,12 @@ L=18
 model=res_high_po_0p35
 spiceprefix=X
 mult=1}
-C {sky130_fd_pr/res_high_po_0p35.sym} 180 -130 0 0 {name=R2
+C {sky130_fd_pr/res_high_po_0p35.sym} 240 -130 0 1 {name=R2
 L=18
 model=res_high_po_0p35
 spiceprefix=X
 mult=1}
 C {sky130_fd_pr/cap_mim_m3_1.sym} -50 100 1 0 {name=C1 model=cap_mim_m3_1 W=30 L=30 MF=5 spiceprefix=X}
-C {devices/gnd.sym} -350 290 0 0 {name=l1 lab=GND}
-C {devices/vdd.sym} -30 -160 0 0 {name=l2 lab=VDD}
-C {devices/code.sym} -240 610 0 0 {name=TT_MODELS
-only_toplevel=true
-format="tcleval( @value )"
-value="
-** opencircuitdesign pdks install
-.lib $::SKYWATER_MODELS/sky130.lib.spice tt
-.include $::SKYWATER_STDCELLS/sky130_fd_sc_hd.spice
-
-
-"
-spice_ignore=false}
-C {devices/code.sym} -400 610 0 0 {name=SIMULATION
-only_toplevel=false 
-value="
-vs s 1.8 0
-vb b 0 0
-
-.control
-tran 500p 5u uic
-write testbench.raw
-*quit 0
-.endc
-.end
-"}
-C {devices/vdd.sym} -140 480 0 0 {name=l3 lab=VDD}
-C {devices/launcher.sym} 530 320 0 0 {name=h5
-descr="load waves" 
-tclcommand="xschem raw_read $netlist_dir/testbench.raw tran"
-}
 C {devices/lab_pin.sym} -80 -70 0 0 {name=p9 sig_type=std_logic lab=osc_a}
 C {devices/lab_pin.sym} 10 -70 0 1 {name=p10 sig_type=std_logic lab=osc_b}
 C {sky130_fd_pr/nfet_01v8.sym} -480 260 0 1 {name=M5
@@ -258,8 +233,6 @@ L=20
 model=res_high_po_0p35
 spiceprefix=X
 mult=1}
-C {devices/vdd.sym} -500 170 0 0 {name=l5 lab=VDD}
-C {devices/gnd.sym} 180 300 0 0 {name=l6 lab=GND}
 C {sky130_fd_pr/nfet_01v8.sym} 200 270 0 1 {name=M8
 L=2
 W=20
@@ -274,30 +247,25 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {sky130_stdcells/clkinv_8.sym} 60 510 0 0 {name=x1 VGND=GND VNB=VGND VPB=VDD VPWR=VDD prefix=sky130_fd_sc_hd__ }
-C {devices/lab_pin.sym} 20 510 0 0 {name=p17 sig_type=std_logic lab=osc_a}
+C {sky130_stdcells/clkinv_8.sym} 530 -120 0 0 {name=x1 VGND=VSS VNB=VSS VPB=VDD VPWR=VDD prefix=sky130_fd_sc_hd__ }
+C {devices/lab_pin.sym} 490 -120 0 0 {name=p17 sig_type=std_logic lab=osc_a}
 C {devices/lab_pin.sym} -350 100 0 0 {name=p20 sig_type=std_logic lab=nfet_drain}
 C {devices/lab_pin.sym} -440 230 0 1 {name=p22 sig_type=std_logic lab=cset
 }
 C {devices/lab_pin.sym} 270 270 0 1 {name=p23 sig_type=std_logic lab=cset
 }
 C {sky130_fd_pr/cap_mim_m3_1.sym} -50 250 3 1 {name=C2 model=cap_mim_m3_1 W=30 L=30 MF=5 spiceprefix=X}
-C {devices/ipin.sym} -140 480 0 0 {name=p1 lab=VDD}
-C {devices/iopin.sym} 120 510 0 0 {name=p3 lab=osc_out}
-C {devices/ipin.sym} -140 510 0 0 {name=p4 lab=GND}
-C {devices/vsource.sym} -280 500 0 0 {name=V1 value=1.8 savecurrent=false}
-C {devices/gnd.sym} -280 530 0 0 {name=l9 lab=GND}
-C {devices/gnd.sym} -140 510 0 0 {name=l10 lab=GND}
-C {devices/vdd.sym} -280 470 0 0 {name=l11 lab=VDD}
-C {devices/lab_wire.sym} -370 -130 0 0 {name=p2 sig_type=std_logic lab=b}
-C {devices/lab_wire.sym} -150 -130 0 0 {name=p5 sig_type=std_logic lab=s}
-C {devices/lab_wire.sym} 160 -130 0 0 {name=p6 sig_type=std_logic lab=b}
-C {devices/lab_wire.sym} -350 40 0 0 {name=p7 sig_type=std_logic lab=b}
-C {devices/lab_wire.sym} 180 50 0 1 {name=p8 sig_type=std_logic lab=b}
-C {devices/lab_wire.sym} 50 -130 0 1 {name=p11 sig_type=std_logic lab=s}
-C {devices/lab_wire.sym} -520 200 0 0 {name=p12 sig_type=std_logic lab=b}
-C {devices/lab_wire.sym} -500 260 0 0 {name=p13 sig_type=std_logic lab=b}
-C {devices/lab_wire.sym} 180 270 0 0 {name=p14 sig_type=std_logic lab=b}
-C {devices/lab_wire.sym} -350 260 0 1 {name=p15 sig_type=std_logic lab=b}
-C {devices/ipin.sym} -350 460 0 0 {name=p16 lab=b}
-C {devices/ipin.sym} -350 490 0 0 {name=p18 lab=s}
+C {devices/iopin.sym} 590 -120 0 0 {name=p3 lab=osc_out}
+C {devices/lab_pin.sym} -80 -190 0 0 {name=p2 sig_type=std_logic lab=VDD}
+C {devices/lab_pin.sym} -500 150 0 1 {name=p5 sig_type=std_logic lab=VDD
+}
+C {devices/lab_pin.sym} -410 300 0 1 {name=p6 sig_type=std_logic lab=VSS
+}
+C {devices/lab_pin.sym} 180 310 0 1 {name=p7 sig_type=std_logic lab=VSS
+}
+C {devices/lab_pin.sym} 260 50 0 1 {name=p8 sig_type=std_logic lab=VSS
+}
+C {devices/lab_pin.sym} -400 40 2 1 {name=p11 sig_type=std_logic lab=VSS
+}
+C {devices/iopin.sym} -580 -150 0 0 {name=p12 lab=VDD}
+C {devices/iopin.sym} -580 -120 0 0 {name=p1 lab=VSS}
