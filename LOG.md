@@ -15,7 +15,7 @@ fixed some DRC issues related to tie cell not being close enough
 added parax version to testbench, but can't plot the osc_out_parax net for some reason.
 
 hit the port ordering thing again (sim extraction puts ports in "random" order).
-Tried stefan's suggestion but it doesnt work.
+Tried stefan's suggestion but it doesnt work. (works with xschem v3.4.5)
 
 https://open-source-silicon.slack.com/archives/C017P3RAD42/p1709832611711049
 
