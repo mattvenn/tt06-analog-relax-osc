@@ -1,4 +1,4 @@
-v {xschem version=3.4.4 file_version=1.2
+v {xschem version=3.4.5 file_version=1.2
 }
 G {}
 K {}
@@ -45,7 +45,7 @@ xlabmag=1.0
 ylabmag=1.0
 node="osc_out_parax
 osc_ana_out_parax"
-color="4 6"
+color="6 4"
 dataset=-1
 unitx=1
 logx=0
@@ -140,6 +140,10 @@ C {devices/vdd.sym} -220 120 0 0 {name=l4 lab=VDD}
 C {osc.sym} -390 600 0 0 {name=x2
 schematic=osc_parax.sim
 spice_sym_def="tcleval(.include [file normalize ../mag/osc.sim.spice])"
+tclcommand="textwindow [file normalize ../mag/osc.sim.spice]"
+
+
+
 }
 C {devices/lab_pin.sym} -90 680 0 1 {name=p1 sig_type=std_logic lab=osc_out_parax
 }
