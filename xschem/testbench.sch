@@ -139,8 +139,8 @@ C {devices/vdd.sym} -360 -70 0 0 {name=l3 lab=VDD}
 C {devices/vdd.sym} -220 120 0 0 {name=l4 lab=VDD}
 C {osc.sym} -390 600 0 0 {name=x2
 schematic=osc_parax.sim
-spice_sym_def=".include ../../mag/osc.sim.spice"
-tclcommand="textwindow ../mag/osc.sim.spice"}
+spice_sym_def="tcleval(.include [file normalize ../mag/osc.sim.spice])"
+}
 C {devices/lab_pin.sym} -90 680 0 1 {name=p1 sig_type=std_logic lab=osc_out_parax
 }
 C {devices/gnd.sym} -160 590 0 0 {name=l5 lab=GND}
