@@ -15,6 +15,13 @@ module tt_um_mattvenn_relax_osc (
     input  wire       clk,      // clock
     input  wire       rst_n     // reset_n - low to reset
 );
+
+    osc osc(
+        .osc_out(ua[0]),
+        .VDD(VPWR),
+        .VSS(VGND)
+        );
+
     // ties for the output enables
     assign uo_out[0] = VGND;
     assign uo_out[1] = VGND;

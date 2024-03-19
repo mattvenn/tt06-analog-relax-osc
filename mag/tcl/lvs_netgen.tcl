@@ -6,5 +6,5 @@ readnet spice ../xschem/simulation/osc.spice $source
 # add an GL verilog of your digital blocks:
 #readnet verilog ../verilog/gl/r2r_dac_control.v $source
 # top level GL verilog
-#readnet verilog ../verilog/gl/$project.v $source
+readnet verilog ../src/project.v $source
 lvs "$layout $project" "$source $project" $::env(PDK_ROOT)/sky130A/libs.tech/netgen/sky130A_setup.tcl lvs.report -blackbox

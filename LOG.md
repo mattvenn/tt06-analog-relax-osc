@@ -1,3 +1,15 @@
+# Tue 19 Mar 08:33:03 CET 2024
+
+if no subs contact (lvs.report):
+
+155c155
+< Net: VSUBS                                 |Net: VDD                                   
+---
+> Net: x1/VNB                                |Net: VDD                                   
+
+added a pcell subs contact and connected to gnd
+added a tap cell next to the clock buf, resolved the last lvs issues
+
 # Mon 18 Mar 12:14:53 CET 2024
 
 * moved testbench out to start layout
