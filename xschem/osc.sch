@@ -44,9 +44,9 @@ lab=left_cap}
 N -350 100 -340 100 {
 lab=left_cap}
 N -20 100 180 100 {
-lab=left_cap}
+lab=right_cap}
 N 180 80 180 100 {
-lab=left_cap}
+lab=right_cap}
 N -80 -100 -80 -70 {
 lab=osc_a}
 N 10 -100 10 -70 {
@@ -62,11 +62,11 @@ lab=VSS}
 N -350 100 -350 230 {
 lab=left_cap}
 N 180 100 180 190 {
-lab=left_cap}
+lab=right_cap}
 N 220 270 270 270 {
 lab=cset}
 N 180 190 180 240 {
-lab=left_cap}
+lab=right_cap}
 N 570 -120 590 -120 {
 lab=osc_out}
 N -90 100 -80 100 {
@@ -74,7 +74,7 @@ lab=left_cap}
 N -340 100 -150 100 {
 lab=left_cap}
 N -20 100 -20 250 {
-lab=left_cap}
+lab=right_cap}
 N -80 100 -80 250 {
 lab=left_cap}
 N -150 100 -90 100 {
@@ -131,6 +131,8 @@ N -410 290 -410 300 {
 lab=VSS}
 N 180 300 180 310 {
 lab=VSS}
+N 490 -60 590 -60 {
+lab=osc_a}
 C {sky130_fd_pr/nfet_01v8.sym} -330 40 0 1 {name=M1
 L=2
 W=20
@@ -270,3 +272,5 @@ C {devices/lab_pin.sym} -400 40 2 1 {name=p11 sig_type=std_logic lab=VSS
 C {devices/iopin.sym} -580 -150 0 0 {name=p12 lab=VDD}
 C {devices/iopin.sym} -580 -120 0 0 {name=p1 lab=VSS}
 C {devices/lab_pin.sym} 180 100 0 1 {name=p4 sig_type=std_logic lab=right_cap}
+C {devices/iopin.sym} 590 -60 0 0 {name=p13 lab=osc_a}
+C {devices/lab_pin.sym} 490 -60 0 0 {name=p14 sig_type=std_logic lab=osc_a}

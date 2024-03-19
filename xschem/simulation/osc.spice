@@ -1,6 +1,6 @@
 ** sch_path: /home/matt/work/asic-workshop/shuttle-2404/tt06-analog-relax-osc/xschem/osc.sch
-.subckt osc osc_out VDD VSS
-*.PININFO osc_out:B VDD:B VSS:B
+.subckt osc osc_out VDD VSS osc_a
+*.PININFO osc_out:B VDD:B VSS:B osc_a:B
 XM1 osc_a osc_b left_cap VSS sky130_fd_pr__nfet_01v8 L=2 W=20 nf=1 m=1
 XM2 osc_b osc_a right_cap VSS sky130_fd_pr__nfet_01v8 L=2 W=20 nf=1 m=1
 XM3 osc_b osc_b VDD VDD sky130_fd_pr__pfet_01v8 L=2 W=20 nf=1 m=1

@@ -17,7 +17,8 @@ module tt_um_mattvenn_relax_osc (
 );
 
     osc osc(
-        .osc_out(ua[0]),
+        .osc_out(uo_out[0]),
+        .osc_a(ua[0]),
         .VDD(VPWR),
         .VSS(VGND)
         );
