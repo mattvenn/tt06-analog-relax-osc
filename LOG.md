@@ -10,6 +10,10 @@ if no subs contact (lvs.report):
 added a pcell subs contact and connected to gnd
 added a tap cell next to the clock buf, resolved the last lvs issues
 
+fixed some DRC issues related to tie cell not being close enough
+
+added parax version to testbench, but can't plot the osc_out_parax net for some reason.
+
 # Mon 18 Mar 12:14:53 CET 2024
 
 * moved testbench out to start layout
