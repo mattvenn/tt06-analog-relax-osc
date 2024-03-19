@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1710835479
+timestamp 1710836821
 << psubdiff >>
 rect 21282 6460 21306 7326
 rect 22216 6460 22240 7326
@@ -213,7 +213,7 @@ rect 16944 4000 17048 4110
 rect 17607 4109 17729 4110
 rect 20226 2812 20330 4336
 use sky130_fd_sc_hd__tapvpwrvgnd_1  sky130_fd_sc_hd__tapvpwrvgnd_1_0
-timestamp 1685868990
+timestamp 1704896540
 transform 1 0 21314 0 1 9070
 box -38 -48 130 592
 use sky130_fd_sc_hd__clkinv_8  x1 ~/.volare/volare/sky130/versions/78b7bc32ddb4b6f14f76883c2e2dc5b5de9d1cbc/sky130A/libs.ref/sky130_fd_sc_hd/mag
