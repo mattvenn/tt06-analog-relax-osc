@@ -1,3 +1,8 @@
+# Wed 20 Mar 21:11:48 CET 2024
+
+works on laptop with pdk
+/home/matt/.volare/volare/sky130/versions/78b7bc32ddb4b6f14f76883c2e2dc5b5de9d1cbc
+
 # Tue 19 Mar 08:33:03 CET 2024
 
 if no subs contact (lvs.report):
