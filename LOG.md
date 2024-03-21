@@ -1,3 +1,11 @@
+# Wed 20 Mar 19:07:34 CET 2024
+doesn't work on work pc with pdk
+volare/sky130/versions/78b7bc32ddb4b6f14f76883c2e2dc5b5de9d1cbc/sky130A
+
+the
+    .param mc_mm_switch=0
+    .param mc_pr_switch=0
+issues again.
 # Tue 19 Mar 08:33:03 CET 2024
 
 if no subs contact (lvs.report):
