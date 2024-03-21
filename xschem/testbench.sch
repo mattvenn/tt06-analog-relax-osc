@@ -51,14 +51,33 @@ unitx=1
 logx=0
 logy=0
 }
+B 2 950 110 1750 510 {flags=graph
+y1=0
+y2=0.01
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=5e-12
+x2=5e-06
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node=i(vdd)
+color=4
+dataset=-1
+unitx=1
+logx=0
+logy=0
+}
 N -240 140 -160 140 {
-lab=GND}
-N -240 120 -220 120 {
-lab=VDD}
+lab=vss}
 N -240 590 -160 590 {
-lab=GND}
+lab=vss}
 N -240 570 -220 570 {
-lab=VDD}
+lab=vdd}
 N -70 210 -50 210 {
 lab=osc_out}
 N -50 210 -30 210 {
@@ -103,6 +122,30 @@ N -230 630 -230 790 {
 lab=#net4}
 N -230 790 -200 790 {
 lab=#net4}
+N -470 -80 -470 -70 {
+lab=vss}
+N -360 -80 -360 -70 {
+lab=vdd}
+N -470 -10 -470 -0 {
+lab=GND}
+N -360 -10 -360 0 {
+lab=GND}
+N -50 410 -50 420 {
+lab=vss}
+N -50 270 -50 280 {
+lab=vss}
+N -110 850 -110 860 {
+lab=vss}
+N -110 740 -110 750 {
+lab=vss}
+N -240 120 -180 120 {
+lab=vdd}
+N -180 120 -170 120 {
+lab=vdd}
+N -170 60 -140 60 {
+lab=vdd}
+N -170 60 -170 120 {
+lab=vdd}
 C {devices/code.sym} -120 -80 0 0 {name=TT_MODELS
 only_toplevel=true
 format="tcleval( @value )"
@@ -117,7 +160,7 @@ spice_ignore=false}
 C {devices/code.sym} -280 -80 0 0 {name=SIMULATION
 only_toplevel=false 
 value="
-
+.param mc_mm_switch=0
 .control
 tran 500p 5u uic
 write testbench.raw
@@ -133,10 +176,6 @@ tclcommand="xschem raw_read $netlist_dir/testbench.raw tran"
 C {osc.sym} -390 150 0 0 {name=x1}
 C {devices/lab_pin.sym} -30 210 0 1 {name=p3 sig_type=std_logic lab=osc_out
 }
-C {devices/gnd.sym} -360 -10 0 0 {name=l1 lab=GND}
-C {devices/gnd.sym} -160 140 0 0 {name=l2 lab=GND}
-C {devices/vdd.sym} -360 -70 0 0 {name=l3 lab=VDD}
-C {devices/vdd.sym} -220 120 0 0 {name=l4 lab=VDD}
 C {osc.sym} -390 600 0 0 {name=x2
 schematic=osc_parax.sim
 spice_sym_def="tcleval(.include [file normalize ../mag/osc.sim.spice])"
@@ -147,8 +186,6 @@ tclcommand="textwindow [file normalize ../mag/osc.sim.spice]"
 }
 C {devices/lab_pin.sym} -90 680 0 1 {name=p1 sig_type=std_logic lab=osc_out_parax
 }
-C {devices/gnd.sym} -160 590 0 0 {name=l5 lab=GND}
-C {devices/vdd.sym} -220 570 0 0 {name=l6 lab=VDD}
 C {devices/res.sym} -100 210 1 0 {name=R1
 value=500
 footprint=1206
@@ -159,7 +196,6 @@ m=1
 value=10p
 footprint=1206
 device="ceramic capacitor"}
-C {devices/gnd.sym} -50 270 0 0 {name=l7 lab=GND}
 C {devices/res.sym} -160 680 1 0 {name=R2
 value=500
 footprint=1206
@@ -170,7 +206,6 @@ m=1
 value=10p
 footprint=1206
 device="ceramic capacitor"}
-C {devices/gnd.sym} -110 740 0 0 {name=l8 lab=GND}
 C {devices/lab_pin.sym} -30 350 0 1 {name=p2 sig_type=std_logic lab=osc_ana_out
 }
 C {devices/res.sym} -100 350 1 0 {name=R3
@@ -183,7 +218,6 @@ m=1
 value=10p
 footprint=1206
 device="ceramic capacitor"}
-C {devices/gnd.sym} -50 410 0 0 {name=l9 lab=GND}
 C {devices/lab_pin.sym} -90 790 0 1 {name=p4 sig_type=std_logic lab=osc_ana_out_parax
 }
 C {devices/res.sym} -160 790 1 0 {name=R4
@@ -196,4 +230,26 @@ m=1
 value=10p
 footprint=1206
 device="ceramic capacitor"}
-C {devices/gnd.sym} -110 850 0 0 {name=l10 lab=GND}
+C {devices/gnd.sym} -360 0 0 0 {name=l2 lab=GND}
+C {devices/lab_pin.sym} -360 -80 2 1 {name=p5 sig_type=std_logic lab=vdd
+}
+C {devices/lab_pin.sym} -140 60 2 0 {name=p6 sig_type=std_logic lab=vdd
+}
+C {devices/vsource.sym} -470 -40 0 0 {name=V2 value=0 savecurrent=false}
+C {devices/gnd.sym} -470 0 0 0 {name=l3 lab=GND}
+C {devices/lab_pin.sym} -470 -80 2 1 {name=p7 sig_type=std_logic lab=vss
+}
+C {devices/lab_pin.sym} -160 140 0 1 {name=p8 sig_type=std_logic lab=vss
+}
+C {devices/lab_pin.sym} -50 280 0 1 {name=p9 sig_type=std_logic lab=vss
+}
+C {devices/lab_pin.sym} -50 420 0 1 {name=p10 sig_type=std_logic lab=vss
+}
+C {devices/lab_pin.sym} -160 590 0 1 {name=p11 sig_type=std_logic lab=vss
+}
+C {devices/lab_pin.sym} -110 750 0 1 {name=p12 sig_type=std_logic lab=vss
+}
+C {devices/lab_pin.sym} -110 860 0 1 {name=p13 sig_type=std_logic lab=vss
+}
+C {devices/lab_pin.sym} -220 570 2 0 {name=p15 sig_type=std_logic lab=vdd
+}
