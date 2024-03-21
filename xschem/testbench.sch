@@ -13,8 +13,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=5e-12
-x2=5e-06
+x1=2.5000476e-07
+x2=5.2499999e-06
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -37,8 +37,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=5e-12
-x2=5e-06
+x1=2.5000476e-07
+x2=5.2499999e-06
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -51,21 +51,42 @@ unitx=1
 logx=0
 logy=0
 }
-B 2 950 110 1750 510 {flags=graph
-y1=0
-y2=0.01
+B 2 960 100 1760 500 {flags=graph
+y1=6.5e-05
+y2=0.00035
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=5e-12
-x2=5e-06
+x1=2.5000476e-07
+x2=5.2499999e-06
 divx=5
 subdivx=1
 xlabmag=1.0
 ylabmag=1.0
-node=i(vdd)
+node=i(vmeas)
+color=4
+dataset=-1
+unitx=1
+logx=0
+logy=0
+}
+B 2 960 560 1760 960 {flags=graph
+y1=6.9e-05
+y2=0.00033
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=2.5000476e-07
+x2=5.2499999e-06
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node=i(vmeas_parax)
 color=4
 dataset=-1
 unitx=1
@@ -77,7 +98,7 @@ lab=vss}
 N -240 590 -160 590 {
 lab=vss}
 N -240 570 -220 570 {
-lab=vdd}
+lab=#net1}
 N -70 210 -50 210 {
 lab=osc_out}
 N -50 210 -30 210 {
@@ -87,41 +108,41 @@ lab=osc_out_parax}
 N -110 680 -90 680 {
 lab=osc_out_parax}
 N -200 680 -190 680 {
-lab=#net1}
+lab=#net2}
 N -70 350 -50 350 {
 lab=osc_ana_out}
 N -50 350 -30 350 {
 lab=osc_ana_out}
 N -240 160 -190 160 {
-lab=#net2}
+lab=#net3}
 N -190 160 -190 210 {
-lab=#net2}
+lab=#net3}
 N -190 210 -130 210 {
-lab=#net2}
+lab=#net3}
 N -240 180 -200 180 {
-lab=#net3}
+lab=#net4}
 N -200 180 -200 350 {
-lab=#net3}
+lab=#net4}
 N -200 350 -130 350 {
-lab=#net3}
+lab=#net4}
 N -130 790 -110 790 {
 lab=osc_ana_out_parax}
 N -110 790 -90 790 {
 lab=osc_ana_out_parax}
 N -200 790 -190 790 {
-lab=#net4}
+lab=#net5}
 N -240 610 -210 610 {
-lab=#net1}
+lab=#net2}
 N -210 610 -210 680 {
-lab=#net1}
+lab=#net2}
 N -210 680 -200 680 {
-lab=#net1}
+lab=#net2}
 N -240 630 -230 630 {
-lab=#net4}
+lab=#net5}
 N -230 630 -230 790 {
-lab=#net4}
+lab=#net5}
 N -230 790 -200 790 {
-lab=#net4}
+lab=#net5}
 N -470 -80 -470 -70 {
 lab=vss}
 N -360 -80 -360 -70 {
@@ -139,13 +160,15 @@ lab=vss}
 N -110 740 -110 750 {
 lab=vss}
 N -240 120 -180 120 {
-lab=vdd}
+lab=#net6}
 N -180 120 -170 120 {
-lab=vdd}
+lab=#net6}
 N -170 60 -140 60 {
 lab=vdd}
-N -170 60 -170 120 {
+N -170 510 -150 510 {
 lab=vdd}
+N -220 570 -170 570 {
+lab=#net1}
 C {devices/code.sym} -120 -80 0 0 {name=TT_MODELS
 only_toplevel=true
 format="tcleval( @value )"
@@ -251,5 +274,7 @@ C {devices/lab_pin.sym} -110 750 0 1 {name=p12 sig_type=std_logic lab=vss
 }
 C {devices/lab_pin.sym} -110 860 0 1 {name=p13 sig_type=std_logic lab=vss
 }
-C {devices/lab_pin.sym} -220 570 2 0 {name=p15 sig_type=std_logic lab=vdd
+C {devices/lab_pin.sym} -150 510 2 0 {name=p15 sig_type=std_logic lab=vdd
 }
+C {devices/ammeter.sym} -170 90 0 0 {name=Vmeas savecurrent=false}
+C {devices/ammeter.sym} -170 540 0 0 {name=Vmeas_parax savecurrent=false}
