@@ -13,8 +13,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=2.5000476e-07
-x2=5.2499999e-06
+x1=-1.6490614e-07
+x2=2.7341964e-06
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -27,7 +27,6 @@ logx=0
 logy=0
 color="6 4"
 node="osc_out
-
 osc_ana_out"}
 B 2 100 560 900 960 {flags=graph
 y1=0.0014
@@ -37,8 +36,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=2.5000476e-07
-x2=5.2499999e-06
+x1=-1.6490614e-07
+x2=2.7341964e-06
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -59,8 +58,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=2.5000476e-07
-x2=5.2499999e-06
+x1=-1.6490614e-07
+x2=2.7341964e-06
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -80,8 +79,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=2.5000476e-07
-x2=5.2499999e-06
+x1=-1.6490614e-07
+x2=2.7341964e-06
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -174,7 +173,7 @@ only_toplevel=true
 format="tcleval( @value )"
 value="
 ** opencircuitdesign pdks install
-.lib $::SKYWATER_MODELS/sky130.lib.spice tt
+.lib $::SKYWATER_MODELS/sky130.lib.spice mc
 .include $::SKYWATER_STDCELLS/sky130_fd_sc_hd.spice
 
 
@@ -185,8 +184,16 @@ only_toplevel=false
 value="
 .param mc_mm_switch=0
 .control
-tran 500p 5u uic
-write testbench.raw
+let vddc = 1.8            ; create a vector vddc and assign 1.8
+repeat 5
+ * alter V1 $&vddc         ; alter the voltage V1 using vector vddc
+  tran 500p 2u uic
+  let vddc = vddc - 0.1   ; update vddc
+  write testbench.raw  
+  set appendwrite 
+  reset 
+ end
+
 *quit 0
 .endc
 .end
