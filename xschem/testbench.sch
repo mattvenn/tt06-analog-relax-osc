@@ -13,8 +13,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-1.6490614e-07
-x2=2.7341964e-06
+x1=5e-12
+x2=2e-06
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -36,8 +36,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-1.6490614e-07
-x2=2.7341964e-06
+x1=5e-12
+x2=2e-06
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -58,8 +58,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-1.6490614e-07
-x2=2.7341964e-06
+x1=5e-12
+x2=2e-06
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -79,8 +79,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-1.6490614e-07
-x2=2.7341964e-06
+x1=5e-12
+x2=2e-06
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -173,7 +173,7 @@ only_toplevel=true
 format="tcleval( @value )"
 value="
 ** opencircuitdesign pdks install
-.lib $::SKYWATER_MODELS/sky130.lib.spice mc
+.lib $::SKYWATER_MODELS/sky130.lib.spice tt_mm
 .include $::SKYWATER_STDCELLS/sky130_fd_sc_hd.spice
 
 
@@ -182,7 +182,7 @@ spice_ignore=false}
 C {devices/code.sym} -280 -80 0 0 {name=SIMULATION
 only_toplevel=false 
 value="
-.param mc_mm_switch=0
+*.param mc_mm_switch=0
 .control
 let vddc = 1.8            ; create a vector vddc and assign 1.8
 repeat 5
