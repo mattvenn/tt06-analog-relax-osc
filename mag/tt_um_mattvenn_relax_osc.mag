@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1712073239
+timestamp 1713343263
 << metal1 >>
 rect 10916 43408 11216 43414
 rect 11216 43108 12388 43408
@@ -166,7 +166,7 @@ rect 22480 0 22600 200
 rect 26896 0 27016 200
 rect 31312 0 31432 40507
 use osc  osc_0 ~/work/asic-workshop/shuttle-2404/tt06-analog-relax-osc/mag
-timestamp 1712073239
+timestamp 1713343263
 transform 1 0 7190 0 1 30334
 box 3800 -27612 24528 13400
 << labels >>
