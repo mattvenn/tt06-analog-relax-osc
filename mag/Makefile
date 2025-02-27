@@ -17,6 +17,9 @@ $(PROJECT_NAME).lvs.spice: $(PROJECT_NAME).mag
 	magic -rcfile $(MAGIC_RC) -noconsole -dnull tcl/extract_for_lvs.tcl $(PROJECT_NAME)
 	rm -f *.ext
 
+check_pdk:
+	magic -rcfile $(MAGIC_RC) -noconsole -dnull tcl/check_pdk.tcl
+
 drc:
 	magic -rcfile $(MAGIC_RC) -noconsole -dnull tcl/drc.tcl $(PROJECT_NAME)
 	
