@@ -9,6 +9,7 @@ project:
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x2"          # Valid values: 1x1 (digital only), 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+  analog_pins: 1
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
   top_module:  "tt_um_mattvenn_relax_osc"
@@ -51,6 +52,12 @@ pinout:
 
   # Analog pins - you can add more if you use them, up to 8
   ua[0]: "analog oscillator output"
+  ua[1]: ""
+  ua[2]: ""
+  ua[3]: ""
+  ua[4]: ""
+  ua[5]: ""
+
 
 # Do not change!
 yaml_version: 6
